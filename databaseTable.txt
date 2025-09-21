@@ -1,0 +1,104 @@
+Enter password: *************
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 52
+Server version: 8.0.35 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| project            |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+mysql> use project;
+Database changed
+mysql> show tables;
++-------------------+
+| Tables_in_project |
++-------------------+
+| admin             |
+| bill              |
+| billing           |
+| buy_pro_bill      |
+| buyer             |
+| product           |
++-------------------+
+6 rows in set (0.01 sec)
+
+mysql> select * from admin;
++---------+----------+
+| aname   | password |
++---------+----------+
+| nikhil  | 1111     |
+| pranjal | 9999     |
+| Rohit   | 1234     |
++---------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select * from buyer;
++-----+---------+------------+--------------------------+-------------------------------------------+--------+
+| bId | name    | contactNo  | email                    | address                                   | gender |
++-----+---------+------------+--------------------------+-------------------------------------------+--------+ |
+|   1 | rohit   | 8551987988 | gholaprohit172@gmail.com | at post shirasmani tal.kalwan,dist.nashik | Male   |
+|   2 | akshu   | 9823657612 | akshuk2611@gmail.com     | thane east dist.thane                     | female |
+|   3 | Nikhil  | 9823567415 | nikhilkandekar@gmail.com | at post lakhalgaon tal nashik dist nashik | Male   |
+|   4 | avinash | 8478651485 | avi112@gmail.com         | at post adgaon dist nashik                | Male   |
++-----+---------+------------+--------------------------+-------------------------------------------+--------+
+5 rows in set (0.00 sec)
+
+mysql> select * from product;
++-----+--------------+--------+----------------+----------+
+| pId | pName        | rate   | description    | activate |
++-----+--------------+--------+----------------+----------+
+|   1 | narzo 60x    |  13500 | Realme         | YES      |
+|   2 | mi A3        |  12500 | xiomi products | YES      |
+|   3 | moto g54     |  14000 | motorolla      | YES      |
+|   4 | note 9 pro   |  12500 | redmi by MI    | YES      |
+|   5 | galaxy s22   | 122000 | Samsung        | YES      |
+|   6 | iphone 13    |  67000 | Apple          | YES      |
+|   7 | galaxy s24   | 130000 | Samsung        | YES      |
+|   8 | realme 11 5G |  17000 | Realme         | YES      |
+|   9 | vivo v3      |  20000 | vivo v series  | NO       |
+|  10 | realme10     |  10000 | narzo          | YES      |
++-----+--------------+--------+----------------+----------+
+10 rows in set (0.00 sec)
+
+mysql> select * from bill;
+Empty set (0.05 sec)
+
+mysql> select * from billing;
++---------+------+---------+------------+--------------------------+-------------------------------------------+------+------------+--------+----------------+----------+-------------+-------------+--------+
+| Bill_id | bId  | name    | contactNo  | email                    | address                                   | pId  | pName      | rate   | description    | quantity | paid_amount | pend_amount | total  |
++---------+------+---------+------------+--------------------------+-------------------------------------------+------+------------+--------+----------------+----------+-------------+-------------+--------+
+|       4 |    2 | rohit   | 8551987988 | gholaprohit172@gmail.com | at post shirasmani tal.kalwan,dist.nashik |    1 | narzo 60x  |  13500 | Realme         |        1 |       10000 |        3500 |  13500 |
+|     452 |    2 | rohit   | 8551987988 | gholaprohit172@gmail.com | at post shirasmani tal.kalwan,dist.nashik |    6 | iphone 13  |  67000 | Apple          |        1 |       50000 |       17000 |  67000 |
+|     455 |    2 | rohit   | 8551987988 | gholaprohit172@gmail.com | at post shirasmani tal.kalwan,dist.nashik |    2 | mi A3      |  12500 | xiomi products |        1 |       10000 |        2500 |  12500 |
+|     929 |    2 | rohit   | 8551987988 | gholaprohit172@gmail.com | at post shirasmani tal.kalwan,dist.nashik |    1 | p          |      5 | aaa            |        5 |          20 |           5 |     25 |
+|     984 |    3 | akshu   | 9823657612 | akshuk2611@gmail.com     | thane east dist.thane                     |    5 | galaxy s22 | 122000 | Samsung        |        1 |      122000 |           0 | 122000 |
++---------+------+---------+------------+--------------------------+-------------------------------------------+------+------------+--------+----------------+----------+-------------+-------------+--------+
+11 rows in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
